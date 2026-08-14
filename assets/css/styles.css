@@ -631,3 +631,36 @@ p { margin: 0 0 1em; }
   cursor: pointer;
 }
 body.is-locked { overflow: hidden; }
+
+/* Stories */
+.story {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: clamp(20px, 3vw, 34px);
+  align-items: start;
+  margin-bottom: clamp(18px, 2.6vw, 28px);
+}
+.story:last-of-type { margin-bottom: 0; }
+@media (max-width: 640px) { .story { grid-template-columns: 1fr; justify-items: start; } }
+
+.story img {
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: var(--border);
+}
+.story h2 { margin: 0 0 2px; font-size: clamp(1.3rem, 2.6vw, 1.7rem); }
+.story__from {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: .8rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--forest);
+  background: var(--sun);
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+.story p:last-child { margin-bottom: 0; }
