@@ -23,6 +23,9 @@ def check(root: Path) -> list[str]:
 
     for page in pages:
         rel = page.relative_to(root)
+        # tools/ 디렉터리 하위의 픽스처 파일 제외 (루트를 명시적으로 지정한 경우는 제외 대상이 아님)
+        if rel.parts and rel.parts[0] == "tools":
+            continue
         html = page.read_text(encoding="utf-8")
         ids = set(ID_ATTR.findall(html))
 
@@ -54,7 +57,9 @@ def main() -> None:
     problems = check(root)
     for problem in problems:
         print(problem)
-    total = len(sorted(root.rglob("*.html")))
+    # tools/ 디렉터리를 제외한 페이지 개수만 집계
+    all_pages = sorted(root.rglob("*.html"))
+    total = sum(1 for p in all_pages if p.relative_to(root).parts and p.relative_to(root).parts[0] != "tools")
     if problems:
         print(f"\n✗ {total}개 페이지에서 {len(problems)}건 발견")
         sys.exit(1)
