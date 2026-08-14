@@ -664,3 +664,17 @@ body.is-locked { overflow: hidden; }
   margin-bottom: 14px;
 }
 .story p:last-child { margin-bottom: 0; }
+
+/* ========== FAQ ========== */
+.faq { margin: clamp(20px, 3vw, 32px) 0 0; }
+.faq dt {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--navy);
+  padding-top: clamp(18px, 2.4vw, 26px);
+  border-top: 1px solid rgba(26, 26, 26, .14);
+  margin-top: clamp(18px, 2.4vw, 26px);
+}
+.faq dt:first-child { border-top: 0; margin-top: 0; padding-top: 0; }
+.faq dd { margin: 8px 0 0; color: var(--muted); }
