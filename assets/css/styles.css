@@ -549,3 +549,85 @@ p { margin: 0 0 1em; }
   color: var(--ink);
   opacity: 0.9;
 }
+
+.poster-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: clamp(18px, 2.6vw, 28px);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.poster-grid h3 { margin: 14px 0 2px; font-size: 1.05rem; }
+.poster-grid p { margin: 0; font-size: .88rem; color: var(--muted); }
+
+.poster {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--paper);
+  cursor: zoom-in;
+  transition: transform .25s var(--ease);
+}
+.poster:hover { transform: translateY(-3px); }
+.poster:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
+.poster img { width: 100%; aspect-ratio: 9 / 13; object-fit: cover; }
+
+.gallery {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: clamp(12px, 2vw, 20px);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: var(--border);
+  border-radius: var(--radius-sm);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: clamp(20px, 5vw, 56px);
+  background: rgba(7, 42, 66, .92);
+}
+.lightbox[hidden] { display: none; }
+.lightbox__figure { margin: 0; display: grid; gap: 14px; justify-items: center; max-height: 100%; }
+.lightbox__figure img {
+  max-width: min(560px, 100%);
+  max-height: 76vh;
+  width: auto;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--paper);
+}
+.lightbox__figure figcaption {
+  color: var(--paper);
+  font-family: var(--font-head);
+  font-weight: 600;
+  text-align: center;
+}
+.lightbox__close {
+  position: absolute;
+  top: clamp(12px, 3vw, 24px);
+  right: clamp(12px, 3vw, 24px);
+  width: 48px; height: 48px;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--ink);
+  background: var(--paper);
+  border: var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+}
+body.is-locked { overflow: hidden; }

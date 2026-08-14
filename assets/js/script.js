@@ -67,9 +67,55 @@
     update();
   }
 
+  /* --- Poster lightbox --- */
+  function initLightbox() {
+    var box = document.getElementById('lightbox');
+    var img = document.getElementById('lightboxImg');
+    var cap = document.getElementById('lightboxCap');
+    var closeBtn = document.getElementById('lightboxClose');
+    var triggers = document.querySelectorAll('.poster');
+    if (!box || !img || !cap || !closeBtn || !triggers.length) return;
+
+    var lastFocused = null;
+
+    function open(trigger) {
+      lastFocused = trigger;
+      img.src = trigger.getAttribute('data-full');
+      img.alt = trigger.getAttribute('data-caption') || '';
+      cap.textContent = trigger.getAttribute('data-caption') || '';
+      box.hidden = false;
+      document.body.classList.add('is-locked');
+      closeBtn.focus();
+    }
+
+    function close() {
+      box.hidden = true;
+      img.src = '';
+      document.body.classList.remove('is-locked');
+      if (lastFocused) lastFocused.focus();
+    }
+
+    triggers.forEach(function (trigger) {
+      trigger.addEventListener('click', function () { open(trigger); });
+    });
+
+    closeBtn.addEventListener('click', close);
+
+    box.addEventListener('click', function (e) {
+      if (e.target === box) close();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (box.hidden) return;
+      if (e.key === 'Escape') { close(); return; }
+      if (e.key === 'Tab') { e.preventDefault(); closeBtn.focus(); }
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initReveal();
     initMobileNav();
     initHeaderState();
+    initLightbox();
   });
 })();
