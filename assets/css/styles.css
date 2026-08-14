@@ -474,3 +474,44 @@ p { margin: 0 0 1em; }
   background: var(--sun);
 }
 .cta-band .lead { margin-inline: auto; }
+
+/* ========== Programs page ========== */
+.prog-card { display: flex; gap: 18px; align-items: flex-start; }
+.prog-card h3 { margin: 0 0 2px; color: var(--forest); }
+.prog-card p { margin: 0 0 .6em; }
+.prog-card p:last-child { margin-bottom: 0; }
+.prog-card__sub {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: .84rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.steps {
+  list-style: none;
+  margin: clamp(24px, 4vw, 40px) 0 clamp(24px, 4vw, 36px);
+  padding: 0;
+  display: grid;
+  gap: clamp(16px, 2.4vw, 26px);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  counter-reset: step;
+}
+.steps li {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  padding: clamp(20px, 2.6vw, 30px);
+  border: 2px solid rgba(255, 255, 255, .28);
+  border-radius: var(--radius);
+}
+.steps__num {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: var(--teal);
+}
+.steps h3 { margin: 0; }
+.steps p { margin: 0; color: rgba(255, 255, 255, .74); }
