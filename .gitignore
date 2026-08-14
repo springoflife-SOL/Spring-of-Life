@@ -1,0 +1,18 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.claude/
+.vscode/
+*.swp
+*.swo
+
+# Dependencies
+node_modules/
+
+# Archive (development reference only)
+_archive/
+
+# Source deck (kept locally, not tracked)
+*.pdf
