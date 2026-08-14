@@ -318,3 +318,78 @@ p { margin: 0 0 1em; }
   font-size: .84rem;
   color: rgba(255, 255, 255, .62);
 }
+
+/* Task 5: Home content sections ----------------------- */
+
+.stats {
+  list-style: none;
+  margin: clamp(24px, 4vw, 40px) 0 0;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  border-top: 2px solid var(--ink);
+  padding-top: clamp(20px, 3vw, 32px);
+}
+.stats li { display: grid; gap: 2px; }
+.stats strong {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  line-height: 1;
+  color: var(--navy);
+}
+.stats span { font-size: .86rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+
+.pillar { display: grid; gap: 12px; align-content: start; }
+.pillar h3 { margin: 4px 0 0; color: var(--forest); }
+.pillar p { margin: 0; color: var(--muted); }
+
+.prog-list {
+  list-style: none;
+  margin: 0 0 clamp(24px, 4vw, 36px);
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.prog-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 14px;
+  padding: 16px 22px;
+  background: rgba(255, 255, 255, .07);
+  border: 2px solid rgba(255, 255, 255, .28);
+  border-radius: var(--radius-sm);
+}
+.prog-list strong { font-family: var(--font-head); font-size: 1.05rem; }
+.prog-list span { color: rgba(255, 255, 255, .7); font-size: .94rem; }
+
+.quote { display: grid; gap: 14px; align-content: start; margin: 0; }
+.quote img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; border: 2px solid var(--ink); }
+.quote blockquote { margin: 0; font-size: 1.02rem; }
+.quote figcaption { font-size: .9rem; color: var(--muted); }
+.quote figcaption strong { font-family: var(--font-head); color: var(--ink); }
+
+.strip {
+  list-style: none;
+  margin: 0 0 clamp(24px, 4vw, 36px);
+  padding: 0 0 8px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(180px, 1fr);
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.strip li { scroll-snap-align: start; }
+.strip img {
+  width: 100%;
+  aspect-ratio: 9 / 13;
+  object-fit: cover;
+  border: var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.cta-band { text-align: center; display: grid; gap: 16px; justify-items: center; }
+.cta-band .lead { margin-inline: auto; }
