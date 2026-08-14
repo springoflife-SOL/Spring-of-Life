@@ -289,6 +289,7 @@ Image.new('RGBA', (1, 1), (0, 0, 0, 0)).save('tools/fixtures/exists.png')
   <a href="#anchor">jump</a>
   <a href="https://example.com/">external</a>
   <a href="mailto:hi@example.com">mail</a>
+  <a href="#">placeholder</a>
   <img src="exists.png" alt="a pixel">
   <img src="exists.png" alt="">
   <h2 id="anchor">Anchor</h2>
@@ -351,6 +352,8 @@ def check(root: Path) -> list[str]:
             target = target.strip()
             if not target or target.startswith(SKIP_PREFIX):
                 continue
+            if target == "#":
+                continue  # 의도된 자리표시자 (스펙 §12)
             if target.startswith("#"):
                 if target[1:] not in ids:
                     problems.append(f"{rel}: 앵커 대상 없음 — {target}")
@@ -391,7 +394,10 @@ python3 tools/verify.py tools/fixtures
 - `bad.html: 앵커 대상 없음 — #ghost`
 - `bad.html: 파일 없음 — nope.html`
 
-`good.html`에서는 한 건도 나오면 안 된다. 외부 링크·mailto·`alt=""`를 오탐하면 스크립트를 고친다.
+`good.html`에서는 한 건도 나오면 안 된다.
+외부 링크 · `mailto:` · `alt=""` · **자리표시자 `href="#"`** 를 오탐하면 스크립트를 고친다.
+(`href="#"`는 스펙 §12가 명시한 의도된 자리표시자이므로 반드시 통과해야 한다 —
+Task 7의 `Apply now` 버튼이 이 형태다.)
 
 - [ ] **Step 4: 정상 케이스만 있을 때 통과하는지 확인**
 
@@ -1053,6 +1059,8 @@ PORT = 8765
 
 def serve() -> socketserver.TCPServer:
     handler = partial(http.server.SimpleHTTPRequestHandler, directory=str(ROOT))
+    # 반복 실행 시 직전 소켓의 TIME_WAIT로 죽지 않도록
+    socketserver.TCPServer.allow_reuse_address = True
     httpd = socketserver.TCPServer(("127.0.0.1", PORT), handler)
     threading.Thread(target=httpd.serve_forever, daemon=True).start()
     return httpd
@@ -1106,6 +1114,7 @@ def main() -> None:
             browser.close()
     finally:
         httpd.shutdown()
+        httpd.server_close()
 
     for problem in problems:
         print(problem)
