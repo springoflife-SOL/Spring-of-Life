@@ -69,6 +69,19 @@ def main() -> None:
                         problems.append(f"{name} @{width}px: 콘솔 에러 — {err}")
 
                     if shots and width == 1440:
+                        # 모든 reveal 요소 발동: 끝까지 스크롤
+                        scroll_height = page.evaluate(
+                            "document.documentElement.scrollHeight")
+                        step = 300
+                        for y in range(step, scroll_height, step):
+                            page.evaluate(f"window.scrollTo(0, {y})")
+                            page.wait_for_timeout(100)
+                        page.evaluate(f"window.scrollTo(0, {scroll_height})")
+                        # CSS 트랜지션(0.7s) 완료 대기
+                        page.wait_for_timeout(800)
+                        # 맨 위로 복귀
+                        page.evaluate("window.scrollTo(0, 0)")
+                        page.wait_for_timeout(100)
                         page.screenshot(path=str(shots / f"{Path(name).stem}.png"),
                                         full_page=True)
                 page.close()
