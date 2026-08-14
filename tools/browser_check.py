@@ -48,13 +48,30 @@ def main() -> None:
             browser = p.chromium.launch()
             for width in WIDTHS:
                 page = browser.new_page(viewport={"width": width, "height": 900})
-                errors: list[str] = []
-                page.on("console", lambda m: errors.append(m.text)
-                        if m.type == "error" else None)
-                page.on("pageerror", lambda e: errors.append(str(e)))
+                errors: list[tuple[str, str]] = []  # (message, source_url)
+                external_notes: list[str] = []
+
+                def on_console(msg):
+                    if msg.type == "error":
+                        location_url = msg.location.get("url", "") if msg.location else ""
+                        if f"127.0.0.1:{PORT}" in location_url or not location_url:
+                            # 로컬 서버 에러 또는 출처 불명: 실패 처리
+                            errors.append((msg.text, location_url))
+                        else:
+                            # 외부 리소스 에러: 참고용만 기록
+                            external_notes.append(
+                                f"참고: 외부 리소스 로드 실패 — {msg.text} (출처: {location_url})")
+
+                def on_page_error(err):
+                    # JS 예외는 출처 무관 실패 처리
+                    errors.append((f"JS 예외: {str(err)}", ""))
+
+                page.on("console", on_console)
+                page.on("pageerror", on_page_error)
 
                 for name in pages:
                     del errors[:]
+                    del external_notes[:]
                     page.goto(f"http://127.0.0.1:{PORT}/{name}",
                               wait_until="networkidle")
                     page.wait_for_timeout(400)
@@ -65,8 +82,11 @@ def main() -> None:
                         problems.append(
                             f"{name} @{width}px: 가로 오버플로 "
                             f"scrollWidth={scroll_w} > innerWidth={inner_w}")
-                    for err in errors:
-                        problems.append(f"{name} @{width}px: 콘솔 에러 — {err}")
+                    for msg, url in errors:
+                        msg_with_url = f"{msg} (출처: {url})" if url else msg
+                        problems.append(f"{name} @{width}px: 콘솔 에러 — {msg_with_url}")
+                    for note in external_notes:
+                        print(note)
 
                     if shots and width == 1440:
                         # 모든 reveal 요소 발동: 끝까지 스크롤
