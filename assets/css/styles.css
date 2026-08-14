@@ -392,4 +392,85 @@ p { margin: 0 0 1em; }
 }
 
 .cta-band { text-align: center; display: grid; gap: 16px; justify-items: center; }
+
+/* ============== ABOUT PAGE STYLES ============== */
+
+.journey {
+  margin-top: clamp(24px, 4vw, 40px);
+  display: grid;
+  gap: clamp(18px, 3vw, 30px);
+  grid-template-columns: minmax(180px, .8fr) 2fr;
+  align-items: center;
+}
+@media (max-width: 720px) { .journey { grid-template-columns: 1fr; } }
+
+.journey__origin {
+  display: grid;
+  gap: 4px;
+  padding: clamp(20px, 3vw, 28px);
+  border: 2px solid var(--teal);
+  border-radius: var(--radius);
+  background: rgba(127, 207, 212, .12);
+}
+.journey__origin strong { font-family: var(--font-head); font-size: 1.6rem; }
+
+.journey__targets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.journey__targets li {
+  display: grid;
+  gap: 4px;
+  padding: 18px 20px;
+  border: 2px solid rgba(255, 255, 255, .28);
+  border-radius: var(--radius-sm);
+}
+.journey__targets strong { font-family: var(--font-head); font-size: 1.15rem; }
+
+.journey__label {
+  font-size: .74rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.timeline { list-style: none; margin: clamp(20px, 3vw, 32px) 0 0; padding: 0; display: grid; gap: 0; }
+.timeline li {
+  position: relative;
+  padding: 0 0 clamp(24px, 3vw, 34px) clamp(28px, 4vw, 40px);
+  border-left: 2px solid var(--teal);
+}
+.timeline li:last-child { border-left-color: transparent; padding-bottom: 0; }
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -9px; top: 4px;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--sun);
+  border: 2px solid var(--ink);
+}
+.timeline h3 { margin: 0 0 6px; color: var(--forest); }
+.timeline p { margin: 0; color: var(--muted); }
+
+.partner-list {
+  list-style: none;
+  margin: clamp(18px, 3vw, 28px) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.partner-list li {
+  font-family: var(--font-head);
+  font-weight: 600;
+  padding: 12px 22px;
+  border: var(--border);
+  border-radius: 999px;
+  background: var(--sun);
+}
 .cta-band .lead { margin-inline: auto; }
