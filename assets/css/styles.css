@@ -27,7 +27,7 @@
   --radius:    22px;
   --radius-sm: 14px;
   --border:    2.5px solid var(--ink);
-  --section-y: clamp(64px, 10vw, 120px);
+  --section-y: clamp(36px, 4.6vw, 66px);
 
   /* Motion */
   --ease: cubic-bezier(.2, .7, .2, 1);
@@ -271,7 +271,7 @@ p { margin: 0 0 1em; }
 
 /* Hero -------------------------------------------------- */
 
-.hero { padding-block: clamp(48px, 8vw, 96px); }
+.hero { padding-block: clamp(28px, 3.4vw, 48px); }
 .hero__panel { display: grid; gap: clamp(20px, 3vw, 34px); text-align: center; }
 .hero__mark { width: clamp(84px, 12vw, 128px); height: auto; margin-inline: auto; }
 .hero h1 { margin: 0; }
