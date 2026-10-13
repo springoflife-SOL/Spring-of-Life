@@ -665,6 +665,27 @@ body.is-locked { overflow: hidden; }
 }
 .story p:last-child { margin-bottom: 0; }
 
+/* ========== We In Campus ========== */
+.wic { border-color: var(--forest); background: rgba(31, 75, 63, .04); }
+.wic .eyebrow { color: var(--forest); }
+
+.wic-features {
+  margin: clamp(24px, 3.4vw, 36px) 0 clamp(28px, 4vw, 44px);
+  grid-template-columns: 1fr;
+  max-width: none;
+}
+@media (min-width: 640px) { .wic-features { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); } }
+.wic-features .chip { background: var(--sun); }
+.wic-features .chip svg { stroke: var(--forest); }
+.wic-features h3 { margin: 0 0 4px; color: var(--forest); }
+.wic-features p { margin: 0; color: var(--muted); }
+
+.wic-gallery { margin-bottom: clamp(24px, 3.4vw, 36px); }
+
+.wic-cta { text-align: center; margin: 0; }
+.btn--campus { background: var(--forest); border-color: var(--forest); color: var(--paper); }
+.btn--campus:hover { background: #16392f; color: var(--paper); }
+
 /* ========== FAQ ========== */
 .faq { margin: clamp(20px, 3vw, 32px) 0 0; }
 .faq dt {
