@@ -65,11 +65,10 @@
         btn.setAttribute('aria-expanded', 'false');
       }
 
-      btn.addEventListener('click', function () {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
         if (item.getAttribute('data-open') === 'true') close(); else open();
       });
-      item.addEventListener('mouseenter', open);
-      item.addEventListener('mouseleave', close);
       document.addEventListener('click', function (e) {
         if (!item.contains(e.target)) close();
       });
