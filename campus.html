@@ -1,216 +1,396 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>We In Campus | Spring of Life</title>
-  <meta name="description"
-    content="We In Campus brings Spring of Life onto university campuses: student-led Bible groups, peer mentoring, events, and leadership training." />
-  <link rel="canonical" href="https://springoflife-sol.github.io/Spring-of-Life/campus.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://springoflife-sol.github.io/Spring-of-Life/campus.html" />
-  <meta property="og:title" content="We In Campus | Spring of Life" />
-  <meta property="og:description"
-    content="We In Campus brings Spring of Life onto university campuses: student-led Bible groups, peer mentoring, events, and leadership training." />
-  <meta property="og:image" content="https://springoflife-sol.github.io/Spring-of-Life/assets/images/logo.png" />
-  <meta property="og:site_name" content="Spring of Life" />
-  <meta property="og:locale" content="en_US" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="We In Campus | Spring of Life" />
-  <meta name="twitter:description"
-    content="We In Campus brings Spring of Life onto university campuses: student-led Bible groups, peer mentoring, events, and leadership training." />
-  <meta name="twitter:image" content="https://springoflife-sol.github.io/Spring-of-Life/assets/images/logo.png" />
-  <link rel="icon" href="assets/images/logo.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@1,500;1,600&family=Poppins:wght@600;700;800&display=swap" />
-  <link rel="stylesheet" as="style" crossorigin
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>We in Campus | 위인</title>
+<meta name="description" content="We in Campus (위인) — a Bible-centered movement for students, made in God's image and sent to your campus. Join the waitlist.">
+<link rel="canonical" href="https://springoflife-sol.github.io/Spring-of-Life/campus.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://springoflife-sol.github.io/Spring-of-Life/campus.html">
+<meta property="og:title" content="We in Campus | 위인">
+<meta property="og:description" content="We in Campus (위인) — a Bible-centered movement for students, made in God's image and sent to your campus. Join the waitlist.">
+<meta property="og:image" content="https://springoflife-sol.github.io/Spring-of-Life/assets/images/logo.png">
+<meta property="og:site_name" content="Spring of Life">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="We in Campus | 위인">
+<meta name="twitter:description" content="We in Campus (위인) — a Bible-centered movement for students, made in God's image and sent to your campus. Join the waitlist.">
+<meta name="twitter:image" content="https://springoflife-sol.github.io/Spring-of-Life/assets/images/logo.png">
+<link rel="icon" href="assets/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Figtree:wght@400;500;600;700&family=Noto+Sans+KR:wght@500;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #08271b;
+    --forest2: #0f3b29;
+    --lime: #d3f84a;
+    --butter: #f8e58b;
+    --sage: #dcebd9;
+    --white: #ffffff;
+    --text: #eaf4ec;
+    --muted: #a5c2b0;
+    --display: "Unbounded", "Noto Sans KR", system-ui, sans-serif;
+    --kr: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    --body: "Figtree", "Noto Sans KR", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--forest); color: var(--text); font-family: var(--body); font-size: 1.0625rem; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, p { margin: 0; }
+  a { color: inherit; }
+  .wrap { width: min(1180px, 100% - 2rem); margin-inline: auto; }
 
+  /* NAV */
+  .nav { position: fixed; top: .9rem; left: 50%; transform: translateX(-50%); z-index: 10; width: min(680px, 100% - 1.5rem);
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding: .45rem .5rem .45rem 1.2rem; border-radius: 999px;
+    background: rgba(15,59,41,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(211,248,74,.18); }
+  .nav .left { display: flex; align-items: center; gap: .9rem; min-width: 0; }
+  .nav .logo { font-family: var(--display); font-weight: 700; font-size: .95rem; display: flex; align-items: center; gap: .55rem; text-decoration: none; white-space: nowrap; }
+  .nav .logo .kr { font-family: var(--kr); font-weight: 900; color: var(--lime); }
+  .nav .back { font-size: .76rem; font-weight: 600; color: var(--muted); text-decoration: none; white-space: nowrap;
+    padding-left: .9rem; border-left: 1px solid rgba(211,248,74,.22); }
+  .nav .back:hover { color: var(--lime); }
+  @media (max-width: 480px) { .nav .back { display: none; } }
+  .pill { display: inline-block; background: var(--lime); color: var(--forest); font-family: var(--body); font-weight: 700; font-size: 1rem;
+    padding: .7rem 1.3rem; border: 0; border-radius: 999px; text-decoration: none; cursor: pointer; transition: transform .15s, box-shadow .15s; }
+  .pill:hover { transform: scale(1.04); box-shadow: 0 6px 24px -4px rgba(211,248,74,.5); }
+  .pill:active { transform: scale(.98); }
+  .pill[disabled] { opacity: .6; cursor: default; transform: none; box-shadow: none; }
+  .pill.sm { padding: .55rem 1.1rem; font-size: .95rem; }
+
+  /* HERO */
+  .hero { min-height: 100vh; min-height: 100svh; padding: 7rem 0 3rem; display: flex; align-items: center; position: relative; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; width: 70vmax; height: 70vmax; right: -25vmax; top: -30vmax; border-radius: 50%;
+    background: radial-gradient(circle, rgba(211,248,74,.16), rgba(211,248,74,0) 60%); pointer-events: none; }
+  .hero .wrap { position: relative; }
+  .hero h1 { font-family: var(--display); font-weight: 900; font-size: clamp(3.4rem, 15vw, 11rem); line-height: .88; letter-spacing: -.05em; }
+  .hero h1 .kr { display: inline-block; font-family: var(--kr); font-weight: 900; color: var(--forest); background: var(--lime); letter-spacing: -.04em;
+    padding: .02em .16em .06em; border-radius: .22em; transform: rotate(-3deg); margin-left: .05em; }
+  .hero .sub { margin-top: 1.8rem; max-width: 36ch; font-size: clamp(1.2rem, 2.6vw, 1.6rem); font-weight: 500; line-height: 1.35; color: var(--text); }
+  .hero .actions { margin-top: 2rem; display: flex; gap: .8rem; align-items: center; flex-wrap: wrap; }
+  .hint { font-size: .9rem; color: var(--muted); }
+
+  .stickers { position: relative; margin-top: 3rem; height: 15rem; }
+  .sticker { position: absolute; left: var(--x); top: var(--y); transform: rotate(var(--r)); touch-action: none; user-select: none; -webkit-user-select: none;
+    cursor: grab; padding: .8rem 1.3rem; border-radius: 999px; font-family: var(--display); font-weight: 700; font-size: clamp(.85rem, 2.2vw, 1.15rem);
+    background: var(--c); color: var(--forest); box-shadow: 0 10px 24px -10px rgba(0,0,0,.6); white-space: nowrap; transition: box-shadow .15s; }
+  .sticker:active { cursor: grabbing; box-shadow: 0 18px 34px -10px rgba(0,0,0,.7); }
+  .sticker.kr { font-family: var(--kr); font-weight: 900; }
+
+  /* SECTION HEADINGS */
+  section { padding: clamp(1.5rem, 4vw, 3rem) 0; }
+  .label { display: inline-block; font-weight: 700; font-size: .95rem; color: var(--lime); border: 1.5px solid var(--lime); border-radius: 999px; padding: .25rem .9rem; margin-bottom: 1.2rem; }
+
+  /* BENTO */
+  .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: .9rem; }
+  .card { border-radius: 28px; padding: clamp(1.4rem, 3vw, 2.2rem); position: relative; overflow: hidden; }
+  .c-big { grid-column: span 4; background: var(--lime); color: var(--forest); display: flex; flex-direction: column; justify-content: flex-end; min-height: 22rem; }
+  .c-big .stack { font-family: var(--display); font-weight: 900; font-size: clamp(2.6rem, 8vw, 6rem); line-height: .95; letter-spacing: -.04em; }
+  .c-big .stack span { display: block; }
+  .c-big .stack .k { font-family: var(--kr); letter-spacing: -.03em; }
+  .c-side { grid-column: span 2; background: var(--forest2); border: 1px solid rgba(211,248,74,.15); display: flex; align-items: flex-end; }
+  .c-side p { font-family: var(--display); font-weight: 500; font-size: clamp(1.1rem, 2.2vw, 1.5rem); line-height: 1.3; }
+  .c-meaning { grid-column: span 6; background: var(--butter); color: var(--forest); display: grid; grid-template-columns: auto 1fr; gap: clamp(1.2rem, 4vw, 3rem); align-items: center; }
+  .c-meaning .han { font-family: var(--kr); font-weight: 900; font-size: clamp(3.5rem, 11vw, 7.5rem); line-height: 1; letter-spacing: -.04em; }
+  .c-meaning p { font-size: clamp(1.15rem, 2.4vw, 1.6rem); font-weight: 600; line-height: 1.35; max-width: 40ch; }
+  .c-meaning .caps { background: var(--forest); color: var(--lime); padding: .05em .4em; border-radius: 999px; white-space: nowrap; }
+
+  .c-v { grid-column: span 2; min-height: 22rem; display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; }
+  .c-v h3 { font-family: var(--display); font-weight: 900; font-size: clamp(1.7rem, 3.2vw, 2.3rem); line-height: 1; letter-spacing: -.03em; margin-bottom: 1rem; }
+  .c-v p { font-size: 1.1rem; line-height: 1.45; }
+  .ref { align-self: flex-start; font-weight: 700; font-size: .95rem; padding: .35rem .95rem; border-radius: 999px; border: 1.5px solid currentColor; }
+  .v1 { background: var(--sage); color: var(--forest); }
+  .v2 { background: var(--forest2); border: 1px solid rgba(211,248,74,.15); }
+  .v2 .ref { color: var(--lime); }
+  .v3 { background: var(--butter); color: var(--forest); }
+
+  /* APPLY */
+  .apply-card { background: var(--sage); color: var(--forest); border-radius: 36px; padding: clamp(1.4rem, 5vw, 3.5rem); display: grid; grid-template-columns: 5fr 7fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+  .apply-card h2 { font-family: var(--display); font-weight: 900; font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: .95; letter-spacing: -.04em; margin-bottom: 1.3rem; }
+  .apply-card .side p { font-size: 1.15rem; max-width: 30ch; margin-bottom: .9rem; }
+  .apply-card .side p.b { font-weight: 700; }
+  .chips { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 1.4rem; }
+  .chips span { background: var(--forest); color: var(--lime); border-radius: 999px; padding: .3rem .9rem; font-weight: 600; font-size: .9rem; }
+  form { background: var(--white); border-radius: 26px; padding: clamp(1.2rem, 3.5vw, 2rem); }
+  .field { margin-bottom: 1.1rem; }
+  label { display: block; font-weight: 700; margin-bottom: .35rem; font-size: .98rem; }
+  .hint2 { font-weight: 400; color: #55705f; font-size: .9rem; }
+  input[type=text], input[type=email], textarea, select { width: 100%; font: inherit; color: var(--forest); background: #eef5ee; border: 2px solid transparent; border-radius: 16px; padding: .85rem 1.05rem; }
+  textarea { min-height: 7.5rem; resize: vertical; border-radius: 20px; }
+  input:focus, textarea:focus, select:focus { outline: none; border-color: var(--forest); background: var(--white); }
+  a:focus-visible, .pill:focus-visible, .sticker:focus-visible { outline: 3px solid var(--butter); outline-offset: 3px; }
+  form .pill { background: var(--forest); color: var(--lime); width: 100%; padding: 1rem 1.3rem; font-size: 1.1rem; }
+  form .pill:hover { box-shadow: 0 8px 26px -6px rgba(8,39,27,.5); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+  .check { display: flex; gap: .7rem; align-items: flex-start; font-size: .95rem; }
+  .check input { margin-top: .3rem; width: 1.2rem; height: 1.2rem; accent-color: var(--forest); }
+  .check label { font-weight: 400; margin: 0; }
+  .status { margin-top: 1rem; font-weight: 500; }
+  .status.ok { color: #12713a; }
+  .status.err { color: #b3202a; }
+  .thanks { display: none; background: var(--lime); border-radius: 26px; padding: 3rem 1.5rem; text-align: center; }
+  .thanks h3 { font-family: var(--display); font-weight: 900; font-size: clamp(2rem, 6vw, 3rem); letter-spacing: -.04em; line-height: 1; margin-bottom: .8rem; }
+  .thanks p { max-width: 34ch; margin: 0 auto; font-size: 1.1rem; }
+
+  footer { padding: 3rem 0 3rem; text-align: center; color: var(--muted); font-weight: 500; }
+  footer .k { font-family: var(--kr); font-weight: 900; color: var(--lime); margin-right: .5rem; }
+
+  @media (max-width: 860px) {
+    .c-big, .c-side, .c-meaning, .c-v { grid-column: span 6; min-height: 0; }
+    .c-big { min-height: 17rem; }
+    .c-meaning { grid-template-columns: 1fr; }
+    .apply-card { grid-template-columns: 1fr; }
+    .two { grid-template-columns: 1fr; }
+    .stickers { height: 17rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .pill, .sticker { transition: none; }
+  }
+</style>
+</head>
 <body>
 
-  <!-- ============== HEADER (shared) ============== -->
-  <header class="header" id="header">
-    <div class="header__inner">
-      <a href="index.html" class="logo" aria-label="Spring of Life — home">
-        <img src="assets/images/logo.png" alt="" class="logo__mark" width="42" height="42" />
-        <span class="logo__text">Spring of Life</span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <ul>
-          <li><a class="nav__link" href="about.html">About</a></li>
-          <li class="nav__item nav__item--dropdown">
-            <button type="button" class="nav__link nav__link--dropdown" aria-haspopup="true" aria-expanded="false">
-              Programs <span class="nav__caret" aria-hidden="true">&#9662;</span>
-            </button>
-            <ul class="nav__dropdown">
-              <li><a href="programs.html">Programs</a></li>
-              <li><a href="campus.html" aria-current="page">We In Campus</a></li>
-            </ul>
-          </li>
-          <li><a class="nav__link" href="events.html">Events</a></li>
-          <li><a class="nav__link" href="stories.html">Stories</a></li>
-        </ul>
-      </nav>
-      <a href="contact.html" class="btn">Get in Touch <span aria-hidden="true">&rarr;</span></a>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
-        <span></span><span></span><span></span>
-      </button>
+<nav class="nav" aria-label="Main">
+  <div class="left">
+    <a class="logo" href="#top"><span class="kr" lang="ko">위인</span> We in Campus</a>
+    <a class="back" href="index.html">&larr; Spring of Life</a>
+  </div>
+  <a class="pill sm" href="#apply">Join the waitlist</a>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1>We in.<br><span class="kr" lang="ko">위인</span></h1>
+    <p class="sub">A Bible-centered movement for students who are done waiting for the world to change. Made in God's image. Sent to your campus.</p>
+    <div class="actions">
+      <a class="pill" href="#apply">Join the waitlist</a>
+      <span class="hint">Psst. Drag the stickers.</span>
     </div>
-    <div class="mobile-nav" id="mobileNav" hidden>
-      <a href="about.html">About</a>
-      <a href="programs.html">Programs</a>
-      <a href="campus.html">We In Campus</a>
-      <a href="events.html">Events</a>
-      <a href="stories.html">Stories</a>
-      <a href="contact.html">Get in Touch</a>
+    <div class="stickers" id="stickers">
+      <div class="sticker kr" style="--x:2%;--y:8%;--r:-6deg;--c:#d3f84a" lang="ko">위인</div>
+      <div class="sticker" style="--x:20%;--y:48%;--r:4deg;--c:#f8e58b">Great people</div>
+      <div class="sticker" style="--x:46%;--y:6%;--r:3deg;--c:#dcebd9">Made in his image</div>
+      <div class="sticker" style="--x:50%;--y:62%;--r:-4deg;--c:#d3f84a">Sent to your campus</div>
+      <div class="sticker" style="--x:74%;--y:30%;--r:5deg;--c:#f8e58b">Bible-centered</div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
+<main>
 
-    <!-- TODO: swap all copy, photos, and the logo mark below once real We In Campus content is provided -->
-    <section class="hero">
-      <div class="wrap">
-        <div class="panel hero__panel">
-          <p class="eyebrow">We In Campus &middot; New Program</p>
-          <h1>Spring of Life, <span class="script">on campus</span></h1>
-          <p class="lead">Bible discussion, peer mentoring, and community &mdash; built around the rhythm of a
-            semester, not a Sunday. Full details and sign-up are coming soon; this page is a mock-up of what&rsquo;s
-            ahead.</p>
+  <section>
+    <div class="wrap">
+      <div class="bento">
+        <div class="card c-big">
+          <div class="stack">
+            <span>We in.</span>
+            <span class="k" lang="ko">위인.</span>
+            <span>Great people.</span>
+          </div>
+        </div>
+        <div class="card c-side">
+          <p>We are in the campus where the next generation is being shaped.</p>
+        </div>
+        <div class="card c-meaning">
+          <div class="han" lang="ko" aria-hidden="true">偉人</div>
+          <p>In Korean, <strong>위인</strong> (偉人) means a person of greatness. Not greatness the world measures by fame, but the kind that comes from <span class="caps">the ONE who made YOU</span> (God).</p>
         </div>
       </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="wrap">
-        <div class="panel wic">
-          <p class="eyebrow reveal">What it&rsquo;s about</p>
-          <h2 class="reveal">We In <span class="script">Campus</span></h2>
-          <p class="lead reveal">Spring of Life is moving onto campus. We In Campus brings Bible discussion
-            groups, peer mentoring, and community events to university students &mdash; a way to stay rooted
-            in faith without stepping off campus to do it.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="provides">
-      <div class="wrap">
-        <p class="eyebrow reveal">What it provides</p>
-        <h2 class="reveal">Four ways to get involved</h2>
-        <ul class="grid grid--auto wic-features">
-          <li class="card reveal">
-            <span class="chip" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2" /><circle cx="6" cy="17" r="2.2" />
-                <circle cx="18" cy="17" r="2.2" /><path d="M12 7.2L7.3 15M12 7.2l4.7 7.8M8.2 17h7.6" /></svg>
-            </span>
-            <div>
-              <h3>Campus Groups</h3>
-              <p>Weekly student-led gatherings, hosted on or near your campus.</p>
-            </div>
-          </li>
-          <li class="card reveal">
-            <span class="chip" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4" /><circle cx="16.5" cy="10.5" r="2.6" />
-                <path d="M3.5 20c0-3.6 2.5-6 5.5-6s5.5 2.4 5.5 6M14.3 20c.3-2.6 1.8-4.6 4-5.3" /></svg>
-            </span>
-            <div>
-              <h3>Peer Mentoring</h3>
-              <p>Paired with an upperclassman or alum who&rsquo;s walked the same halls.</p>
-            </div>
-          </li>
-          <li class="card reveal">
-            <span class="chip" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2" />
-                <path d="M3.5 10h17M8 3v4M16 3v4" /></svg>
-            </span>
-            <div>
-              <h3>Events &amp; Retreats</h3>
-              <p>Seasonal retreats, welcome-week meetups, and finals-week check-ins.</p>
-            </div>
-          </li>
-          <li class="card reveal">
-            <span class="chip" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path
-                  d="M12 3l2.4 5.1 5.6.6-4.1 3.9 1.1 5.6L12 15.6 6.9 18.2 8 12.6 3.9 8.7l5.6-.6z" /></svg>
-            </span>
-            <div>
-              <h3>Leadership Training</h3>
-              <p>A track for students who want to help lead a group of their own.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Placeholder photos — replace with real We In Campus photos/logo once sent -->
-    <section class="section" id="gallery">
-      <div class="wrap">
-        <p class="eyebrow reveal">Pictures</p>
-        <h2 class="reveal">A look at campus life</h2>
-        <ul class="gallery wic-gallery reveal">
-          <li><img src="assets/images/gallery/02.jpg" alt="Placeholder photo — We In Campus visuals coming soon"
-              loading="lazy" /></li>
-          <li><img src="assets/images/gallery/04.jpg" alt="Placeholder photo — We In Campus visuals coming soon"
-              loading="lazy" /></li>
-          <li><img src="assets/images/gallery/05.jpg" alt="Placeholder photo — We In Campus visuals coming soon"
-              loading="lazy" /></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- TODO: point to the real We In Campus sign-up form once ready (kept separate from Get in Touch) -->
-    <section class="section" id="signup">
-      <div class="wrap">
-        <div class="panel wic cta-band reveal">
-          <p class="eyebrow">Join us</p>
-          <h2>Bring We In Campus <span class="marker">to your school</span></h2>
-          <p class="lead">Sign-up isn&rsquo;t open yet &mdash; this button is a placeholder until the real form is
-            ready.</p>
-          <p>
-            <a href="#" class="btn btn--campus">Sign Up for Campus <span aria-hidden="true">&rarr;</span></a>
-            <a href="contact.html" class="btn">Ask a question</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ============== FOOTER (shared) ============== -->
-  <footer class="footer">
-    <div class="footer__inner">
-      <div class="footer__brand">
-        <img src="assets/images/logo.png" alt="" width="52" height="52" />
-        <p class="footer__tagline">A non-denominational Bible institution rooted in missionary work from
-          Germany, reaching youth and communities across Africa, South America, and Asia.</p>
-      </div>
-      <nav class="footer__nav" aria-label="Footer">
-        <div class="footer__group">
-          <strong>Explore</strong>
-          <a href="about.html">About</a>
-          <a href="programs.html">Programs</a>
-          <a href="campus.html">We In Campus</a>
-          <a href="events.html">Events</a>
-        </div>
-        <div class="footer__group">
-          <strong>Connect</strong>
-          <a href="stories.html">Stories</a>
-          <a href="contact.html">Get in Touch</a>
-        </div>
-      </nav>
     </div>
-    <div class="footer__base">
-      <span>&copy; 2026 Spring of Life. All rights reserved.</span>
-      <span>Seoul, Korea &middot; Since 2014</span>
-    </div>
-  </footer>
+  </section>
 
-  <script src="assets/js/script.js"></script>
+  <section>
+    <div class="wrap">
+      <div class="bento">
+        <div class="card c-v v1">
+          <div>
+            <h3>Made in his image</h3>
+            <p>Every student carries dignity and purpose. You will learn to see yourself and everyone around you the way God does.</p>
+          </div>
+          <span class="ref">Genesis 1:27</span>
+        </div>
+        <div class="card c-v v2">
+          <div>
+            <h3>Shaped by his will</h3>
+            <p>Clarity comes from knowing God, not from guessing. You will learn to hear, discern, and obey with confidence.</p>
+          </div>
+          <span class="ref">Romans 12:2</span>
+        </div>
+        <div class="card c-v v3">
+          <div>
+            <h3>Sent into the world</h3>
+            <p>Faith was never meant to stay behind walls. You will be equipped to bring light, justice, and hope to where God calls you to be.</p>
+          </div>
+          <span class="ref">2 Corinthians 5:20</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="apply">
+    <div class="wrap">
+      <div class="apply-card">
+        <div class="side">
+          <h2>Join the waitlist.</h2>
+          <p>Applying takes about five minutes. There is no cost to apply and no commitment until you are invited.</p>
+          <p class="b">We read every application personally.</p>
+          <div class="chips"><span>5 minutes</span><span>Free to apply</span><span>Read by a real person</span></div>
+        </div>
+
+        <div>
+          <form id="applyForm" novalidate>
+            <div class="field">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+            <div class="two">
+              <div class="field">
+                <label for="campus">Your campus</label>
+                <input type="text" id="campus" name="campus" placeholder="University and city">
+              </div>
+              <div class="field">
+                <label for="year">Year</label>
+                <select id="year" name="year">
+                  <option value="">Choose one</option>
+                  <option>1st year</option>
+                  <option>2nd year</option>
+                  <option>3rd year</option>
+                  <option>4th year or above</option>
+                  <option>Graduate student</option>
+                  <option>Staff or faculty</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="why">What would you change on your campus, and why you? <span class="hint2">(a few sentences is plenty)</span></label>
+              <textarea id="why" name="why" required></textarea>
+            </div>
+            <div class="field check">
+              <input type="checkbox" id="consent" name="consent" required>
+              <label for="consent">I agree to be contacted about this program and understand that admission is by application.</label>
+            </div>
+            <button class="pill" type="submit" id="submitBtn">Join the waitlist</button>
+            <p class="status" id="status" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="thanks" id="thanks" tabindex="-1">
+            <h3>You're on the list.</h3>
+            <p>Thank you for applying. We will read your application and reach out when the next cohort opens.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap"><span class="k" lang="ko">위인</span> We in Campus. Made in his image. Sent in his name.</div>
+</footer>
+
+<script>
+  /* ---- SETUP: connect your sign-up form ----
+     Option A: paste your form service URL (Formspree, Google Apps Script,
+               your website's form handler) between the quotes.
+     Option B: leave it blank and set CONTACT_EMAIL; the applicant's email app
+               opens with their answers pre-filled. */
+  var FORM_ENDPOINT = "";
+  var CONTACT_EMAIL = "hello@yourwebsite.org";
+
+  /* ---- Draggable stickers ---- */
+  (function () {
+    var box = document.getElementById("stickers");
+    var z = 1;
+    Array.prototype.forEach.call(box.querySelectorAll(".sticker"), function (el) {
+      var startX, startY, baseL, baseT, dragging = false;
+      el.addEventListener("pointerdown", function (e) {
+        dragging = true;
+        el.setPointerCapture(e.pointerId);
+        var b = box.getBoundingClientRect(), r = el.getBoundingClientRect();
+        baseL = r.left - b.left; baseT = r.top - b.top;
+        startX = e.clientX; startY = e.clientY;
+        el.style.left = baseL + "px"; el.style.top = baseT + "px";
+        el.style.zIndex = ++z;
+      });
+      el.addEventListener("pointermove", function (e) {
+        if (!dragging) return;
+        var b = box.getBoundingClientRect();
+        var nl = baseL + (e.clientX - startX), nt = baseT + (e.clientY - startY);
+        nl = Math.max(0, Math.min(nl, b.width - el.offsetWidth));
+        nt = Math.max(0, Math.min(nt, b.height - el.offsetHeight));
+        el.style.left = nl + "px"; el.style.top = nt + "px";
+      });
+      function end() { dragging = false; }
+      el.addEventListener("pointerup", end);
+      el.addEventListener("pointercancel", end);
+    });
+  })();
+
+  /* ---- Form ---- */
+  var form = document.getElementById("applyForm");
+  var statusEl = document.getElementById("status");
+  var btn = document.getElementById("submitBtn");
+  var thanks = document.getElementById("thanks");
+
+  function setStatus(msg, kind) { statusEl.textContent = msg; statusEl.className = "status " + (kind || ""); }
+  function showThanks() { form.style.display = "none"; thanks.style.display = "block"; thanks.focus(); }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var data = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      campus: form.campus.value.trim(),
+      year: form.year.value,
+      why: form.why.value.trim()
+    };
+
+    if (!data.name || !data.email || !data.why) {
+      setStatus("Please fill in your name, email, and a few sentences about what you would change.", "err");
+      return;
+    }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)) {
+      setStatus("That email address doesn't look right. Please check it and try again.", "err");
+      return;
+    }
+    if (!form.consent.checked) {
+      setStatus("Please tick the box to confirm you agree to be contacted.", "err");
+      return;
+    }
+
+    if (FORM_ENDPOINT) {
+      btn.disabled = true;
+      setStatus("Sending your application...", "");
+      fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+      }).then(function (r) {
+        if (!r.ok) throw new Error("bad response");
+        showThanks();
+      }).catch(function () {
+        btn.disabled = false;
+        setStatus("Your application didn't send. Please check your connection and try again.", "err");
+      });
+    } else {
+      var body = "Name: " + data.name + "\nEmail: " + data.email +
+        "\nCampus: " + data.campus + "\nYear: " + data.year +
+        "\n\nWhat I would change on my campus:\n" + data.why;
+      window.location.href = "mailto:" + CONTACT_EMAIL +
+        "?subject=" + encodeURIComponent("We in Campus waitlist application") +
+        "&body=" + encodeURIComponent(body);
+      setStatus("Your email app should open with your application ready to send. Press send to finish.", "ok");
+    }
+  });
+</script>
 </body>
-
 </html>
