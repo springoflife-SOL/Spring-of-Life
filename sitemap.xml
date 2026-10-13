@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://ondo1400-dotcom.github.io/SL/</loc><priority>1.0</priority></url>
-  <url><loc>https://ondo1400-dotcom.github.io/SL/about.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ondo1400-dotcom.github.io/SL/programs.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ondo1400-dotcom.github.io/SL/events.html</loc><priority>0.6</priority></url>
-  <url><loc>https://ondo1400-dotcom.github.io/SL/stories.html</loc><priority>0.6</priority></url>
-  <url><loc>https://ondo1400-dotcom.github.io/SL/contact.html</loc><priority>0.6</priority></url>
+  <url><loc>https://springoflife-sol.github.io/Spring-of-Life/</loc><priority>1.0</priority></url>
+  <url><loc>https://springoflife-sol.github.io/Spring-of-Life/about.html</loc><priority>0.8</priority></url>
+  <url><loc>https://springoflife-sol.github.io/Spring-of-Life/programs.html</loc><priority>0.8</priority></url>
+  <url><loc>https://springoflife-sol.github.io/Spring-of-Life/campus.html</loc><priority>0.8</priority></url>
+  <url><loc>https://springoflife-sol.github.io/Spring-of-Life/events.html</loc><priority>0.6</priority></url>
+  <url><loc>https://springoflife-sol.github.io/Spring-of-Life/stories.html</loc><priority>0.6</priority></url>
+  <url><loc>https://springoflife-sol.github.io/Spring-of-Life/contact.html</loc><priority>0.6</priority></url>
 </urlset>

@@ -55,7 +55,15 @@
       <nav class="nav" aria-label="Primary">
         <ul>
           <li><a class="nav__link" href="about.html">About</a></li>
-          <li><a class="nav__link" href="programs.html">Programs</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <button type="button" class="nav__link nav__link--dropdown" aria-haspopup="true" aria-expanded="false">
+              Programs <span class="nav__caret" aria-hidden="true">&#9662;</span>
+            </button>
+            <ul class="nav__dropdown">
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="campus.html">We In Campus</a></li>
+            </ul>
+          </li>
           <li><a class="nav__link" href="events.html">Events</a></li>
           <li><a class="nav__link" href="stories.html">Stories</a></li>
         </ul>
@@ -68,6 +76,7 @@
     <div class="mobile-nav" id="mobileNav" hidden>
       <a href="about.html">About</a>
       <a href="programs.html">Programs</a>
+      <a href="campus.html">We In Campus</a>
       <a href="events.html">Events</a>
       <a href="stories.html">Stories</a>
       <a href="contact.html">Get in Touch</a>
@@ -244,6 +253,7 @@
           <strong>Explore</strong>
           <a href="about.html">About</a>
           <a href="programs.html">Programs</a>
+          <a href="campus.html">We In Campus</a>
           <a href="events.html">Events</a>
         </div>
         <div class="footer__group">

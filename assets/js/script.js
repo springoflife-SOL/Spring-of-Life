@@ -47,6 +47,38 @@
     });
   }
 
+  /* --- Nav dropdown (Programs / We In Campus) --- */
+  function initDropdownNav() {
+    var items = document.querySelectorAll('.nav__item--dropdown');
+    if (!items.length) return;
+
+    items.forEach(function (item) {
+      var btn = item.querySelector('.nav__link--dropdown');
+      if (!btn) return;
+
+      function open() {
+        item.setAttribute('data-open', 'true');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+      function close() {
+        item.removeAttribute('data-open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+
+      btn.addEventListener('click', function () {
+        if (item.getAttribute('data-open') === 'true') close(); else open();
+      });
+      item.addEventListener('mouseenter', open);
+      item.addEventListener('mouseleave', close);
+      document.addEventListener('click', function (e) {
+        if (!item.contains(e.target)) close();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { close(); btn.focus(); }
+      });
+    });
+  }
+
   /* --- Header scroll state --- */
   function initHeaderState() {
     var header = document.getElementById('header');
@@ -115,6 +147,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     initReveal();
     initMobileNav();
+    initDropdownNav();
     initHeaderState();
     initLightbox();
   });
