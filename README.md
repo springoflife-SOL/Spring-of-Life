@@ -14,7 +14,6 @@ SL/
 ├── programs.html     프로그램 5종 · How to Start
 ├── campus.html       We In Campus · 목업 (콘텐츠/로고 추후 교체)
 ├── events.html       지난 행사 · 갤러리
-├── stories.html      간증 4편
 ├── contact.html      문의 · FAQ
 │
 ├── assets/
@@ -31,7 +30,7 @@ SL/
 
 ## 기술 스택
 
-- HTML5 정적 다중 페이지 (7장)
+- HTML5 정적 다중 페이지 (6장)
 - Vanilla CSS — 커스텀 프로퍼티, Grid, `clamp()`
 - Vanilla JS — IntersectionObserver reveal, 모바일 내비, 라이트박스. 의존성 0개
 - 폰트 — Poppins · Playfair Display · Inter (Google Fonts), Pretendard (CDN)
